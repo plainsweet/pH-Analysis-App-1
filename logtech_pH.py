@@ -411,7 +411,7 @@ if test == "Contact Us":
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
-    local_css("logtech/style/style.css")
+    local_css("style/style.css")
     
 
  
