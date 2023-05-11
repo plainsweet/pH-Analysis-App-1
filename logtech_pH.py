@@ -391,6 +391,7 @@ if test == "About Us":
     
 if test == "Contact Us":
     st.header(":mailbox: Having a Problem? Contact Us!")
+    
     contact_form = """
     <form action="https://formsubmit.co/rakastdy@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
@@ -404,7 +405,7 @@ if test == "Contact Us":
     
     st.markdown(contact_form, unsafe_allow_html=True)
     
-   
+    # use local css file
     def local_css(file_name):
         with open(file_name) as f:
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
@@ -413,14 +414,4 @@ if test == "Contact Us":
     local_css("logtech/style/style.css")
     
 
-    
-    
-    
-
-
-
-        
-    
-
-
-
+ 
