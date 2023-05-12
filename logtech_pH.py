@@ -7,6 +7,12 @@ import time
 
 import streamlit as st
 #pH-Analysis.py
+st.set_page_config(
+        page_title="logtech - pH Analysis",
+        page_icon="🧪",
+        layout="wide",
+    )
+
 st.image("https://adivapelajar.files.wordpress.com/2023/05/20230511_130815_0000.png?w=1024")    
 with st.sidebar.container():
     st.image("https://adivapelajar.files.wordpress.com/2023/05/20230505_153644_0000.png?w=1024", width=250)
