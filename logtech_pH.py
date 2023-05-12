@@ -50,7 +50,7 @@ if test == "Home":
         if option=="asam kuat":
                 jumlah_digit=4
                 cons = st.number_input(f'Masukkan konsentrasi larutan dalam Molaritas (M)', format='%.'+str(jumlah_digit)+'f')
-                jumlah_digit1=0
+                jumlah_digit1=1
                 val = st.number_input(f'Masukkan valensi larutan', format='%.'+str(jumlah_digit)+'f')
                 H = cons * val
                 import numpy as np
