@@ -252,7 +252,7 @@ if test == "Home":
     ''')
 
             else:
-                st.error('Nilai yang anda masukkan salah, inputkan dalam range 3.1-10')
+                st.error('Nilai yang anda masukkan salah, inputkan dalam range 1-14')
 
     
         
