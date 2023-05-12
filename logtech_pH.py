@@ -50,7 +50,7 @@ if test == "Home":
         if option=="asam kuat":
                 jumlah_digit=4
                 cons = st.number_input(f'Masukkan konsentrasi larutan dalam Molaritas (M)', format='%.'+str(jumlah_digit)+'f')
-                jumlah_digit1=4
+                jumlah_digit1=0
                 val = st.number_input(f'Masukkan valensi larutan', format='%.'+str(jumlah_digit)+'f')
                 H = cons * val
                 import numpy as np
@@ -69,7 +69,7 @@ if test == "Home":
                 val = st.number_input(f'Masukan valensi larutan', format='%.'+str(jumlah_digit)+'f')
                 OH = cons * val 
                 import numpy as np 
-                POH = (np.log10(OH))
+                POH = -(np.log10(OH))
                 pH = 14-POH
                 if st.button('Hitung'):
                     st.write('pH Larutan', NamaLarutan, 'yang merupakan', option, 'adalah')
