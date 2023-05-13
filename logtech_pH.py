@@ -41,8 +41,10 @@ if test == "Home":
     tab1, tab2 = st.tabs(["Penentuan nilai pH", "Indikator"])
 
     with tab1:
-        st.header('Penentuan nilai pH')
-        NamaLarutan= st.text_input('Nama Larutan yang akan dihitung pH-nya:')
+        original_list = ['HCl','NaOH','Pb(OH)2','HNO3','HClO3','Cu(OH)2','LiOH','H2C2O4','RbOH','Ba(OH)2','H3PO4','CH3COOH','KOH','H2SO4','H2O2','NaHCO3','HBO3','HBr','HClO4','Fe(OH)2','NH4OH','H2CO3','Zn(OH)2']
+        
+        result = st.selectbox('Nama Larutan yang akan dipilih', original_list)
+        
         st.write ('Silahkan pilih jenis larutan dengan format "asam kuat", "basa kuat", "asam lemah", "basa lemah"')
         option= st.selectbox('Jenis Larutan',("asam kuat", "basa kuat", "asam lemah", "basa lemah"))
         
