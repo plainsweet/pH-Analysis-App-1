@@ -38,14 +38,17 @@ if test == "Home":
         st.write('Siti Nurhaliza')
         
             
-    tab1, tab2 = st.tabs(["Penentuan nilai pH", "Indikator"])
+    tab1, tab2, tab3 = st.tabs(["Penentuan nilai pH", "Indikator", "Jenis Larutan"])
 
     with tab1:
         original_list = ['HCl','NaOH','Pb(OH)2','HNO3','HClO3','Cu(OH)2','LiOH','H2C2O4','RbOH','Ba(OH)2','H3PO4','CH3COOH','KOH','H2SO4','H2O2','NaHCO3','HBO3','HBr','HClO4','Fe(OH)2','NH4OH','H2CO3','Zn(OH)2']
         
         result = st.selectbox('Nama Larutan yang akan dipilih', original_list)
         
-        st.write ('Silahkan pilih jenis larutan dengan format "asam kuat", "basa kuat", "asam lemah", "basa lemah"')
+        st.write ('''Silahkan pilih jenis larutan dengan format "asam kuat", "basa kuat", "asam lemah", "basa lemah"
+        
+                  Bila belum mengetahui Jenis Larutan yang dipilih silahkan buka tab **{"Jenis Larutan"}**''')
+        
         option= st.selectbox('Jenis Larutan',("asam kuat", "basa kuat", "asam lemah", "basa lemah"))
         
         
@@ -110,8 +113,7 @@ if test == "Home":
                     st.balloons()
                 else :
                     st.write()
-
-    
+               
     with tab2:
         st.header("Penentuan indikator")
         jumlah_digit=1
@@ -255,9 +257,17 @@ if test == "Home":
 
             else:
                 st.error('Nilai yang anda masukkan salah, inputkan dalam range 1-14')
+                
+    with tab3: 
+        import pandas as pd
+        st.write('Beberapa contoh larutan serta jenisnya')
+        data={'Nama larutan':['HCl','NaOH','Pb(OH)2','HNO3','HClO3','Cu(OH)2','LiOH','H2C2O4','RbOH','Ba(OH)2','H3PO4','CH3COOH','KOH','H2SO4','H2O2','NaHCO3','HBO3','HBr','HClO4','Fe(OH)2','NH4OH','H2CO3','Zn(OH)2'],
+              'Jenis larutan':['Asam kuat','Basa kuat','Basa lemah','Asam kuat','Asam kuat','Basa lemah','Basa kuat','Asam lemah','Basa kuat','Basa kuat','Asam lemah','Asam lemah','Basa kuat','Asam kuat','Asam lemah','Basa lemah','Basa lemah','Asam kuat','Asam kuat','Basa lemah','Basa lemah','Asam lemah','Basa lemah']}
 
-    
-        
+        df=pd.DataFrame(data)
+
+        df
+
 if test == "About pH🧪":
     st.title(':green[Yuk Mengenal Apa Itu pH]')
     
