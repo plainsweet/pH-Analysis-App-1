@@ -45,12 +45,10 @@ if test == "Home":
         
         result = st.selectbox('Nama Larutan yang akan dipilih', original_list)
         
-        st.write ('''Silahkan pilih jenis larutan dengan format "asam kuat", "basa kuat", "asam lemah", "basa lemah"
-        
-                  Bila belum mengetahui Jenis Larutan yang dipilih silahkan buka tab **{"Jenis Larutan"}**''')
+        st.write ('Silahkan pilih jenis larutan dengan format "asam kuat", "basa kuat", "asam lemah", "basa lemah"')
         
         option= st.selectbox('Jenis Larutan',("asam kuat", "basa kuat", "asam lemah", "basa lemah"))
-        
+        st.write(f'''Bila ingin mengetahui jenis larutan yang dipilih Silahkan buka Tab : **{  "'Jenis Larutan'"  }**''')
         
         if option=="asam kuat":
                 jumlah_digit=4
@@ -259,6 +257,7 @@ if test == "Home":
                 st.error('Nilai yang anda masukkan salah, inputkan dalam range 1-14')
                 
     with tab3: 
+        st.header("Jenis Larutan")
         import pandas as pd
         st.write('Beberapa contoh larutan serta jenisnya')
         data={'Nama larutan':['HCl','NaOH','Pb(OH)2','HNO3','HClO3','Cu(OH)2','LiOH','H2C2O4','RbOH','Ba(OH)2','H3PO4','CH3COOH','KOH','H2SO4','H2O2','NaHCO3','HBO3','HBr','HClO4','Fe(OH)2','NH4OH','H2CO3','Zn(OH)2'],
@@ -315,15 +314,6 @@ if test == "About pH🧪":
         st.header("Skala pH")
         st.image("https://adivapelajar.files.wordpress.com/2023/05/20230505_170426_0000.png?w=1024", width=660)
         st.write("Skala pH adalah skala logaritmik yang digunakan untuk mengukur keasaman atau kebasaan (alkalinitas) suatu larutan. Skala ini berjalan dari 0 hingga 14, dengan nilai 7 sebagai titik netral. Semakin rendah nilai pH, semakin asam sifatnya. Sebaliknya, semakin tinggi nilai pH, semakin basa (alkaline) sifatnya. Setiap perbedaan satu satuan pada skala pH mewakili perbedaan sepuluh kali dalam keasaman atau kebasaan larutan. Contoh, suatu larutan dengan pH 3.0 adalah sepuluh kali lebih asam daripada larutan dengan pH 4.0. Begitu juga, larutan dengan pH 11.0 adalah sepuluh kali lebih basa daripada larutan dengan pH 10.0. Skala pH digunakan dalam berbagai aplikasi, seperti dalam industri makanan, kimia, dan farmasi, serta dalam analisis air dan tanah. Pengukuran pH dapat dilakukan menggunakan alat yang disebut pH meter atau dengan menggunakan indikator pH, seperti kertas lakmus atau fenolftalein.")
-        
-        import pandas as pd
-        st.write('Beberapa contoh larutan serta jenisnya')
-        data={'Nama larutan':['HCl','NaOH','Pb(OH)2','HNO3','HClO3','Cu(OH)2','LiOH','H2C2O4','RbOH','Ba(OH)2','H3PO4','CH3COOH','KOH','H2SO4','H2O2','NaHCO3','HBO3','HBr','HClO4','Fe(OH)2','NH4OH','H2CO3','Zn(OH)2'],
-              'Jenis larutan':['Asam kuat','Basa kuat','Basa lemah','Asam kuat','Asam kuat','Basa lemah','Basa kuat','Asam lemah','Basa kuat','Basa kuat','Asam lemah','Asam lemah','Basa kuat','Asam kuat','Asam lemah','Basa lemah','Basa lemah','Asam kuat','Asam kuat','Basa lemah','Basa lemah','Asam lemah','Basa lemah']}
-
-        df=pd.DataFrame(data)
-
-        df
 
     with tab3:
      
