@@ -23,6 +23,18 @@ test = st.sidebar.selectbox("Navigation", ['Home', "About pH🧪", "About Us", "
 with st.sidebar.container():
     st.sidebar.markdown("Logtech - pH Analysis App")
 
+import json
+    import requests
+    from streamlit_lottie import st_lottie
+    def load_lottieurl(url: str):
+        r = requests.get(url)
+        if r.status_code != 200:
+            return None
+        return r.json()
+    
+    lottie_hello = load_lottieurl("https://assets9.lottiefiles.com/packages/lf20_XvtPY8hkC5.json")
+    st_lottie(lottie_hello, key="hello")
+
 if test == "Home":
     st.title(':blue[Aplikasi penentu pH Larutan]')
     st.markdown('''Hai users, selamat datang di web kami.😊''')
@@ -38,9 +50,18 @@ if test == "Home":
         st.write('Siti Nurhaliza')
         
             
-    tab1, tab2, tab3 = st.tabs(["Penentuan nilai pH", "Indikator", "Jenis Larutan"])
+    tab1, tab2, = st.tabs(["Penentuan nilai pH", "Indikator"])
 
     with tab1:
+        import pandas as pd
+        st.write('Beberapa contoh larutan serta jenisnya')
+        data={'Nama larutan':['HCl','NaOH','Pb(OH)2','HNO3','HClO3','Cu(OH)2','LiOH','H2C2O4','RbOH','Ba(OH)2','H3PO4','CH3COOH','KOH','H2SO4','H2O2','NaHCO3','HBO3','HBr','HClO4','Fe(OH)2','NH4OH','H2CO3','Zn(OH)2'],
+              'Jenis larutan':['Asam kuat','Basa kuat','Basa lemah','Asam kuat','Asam kuat','Basa lemah','Basa kuat','Asam lemah','Basa kuat','Basa kuat','Asam lemah','Asam lemah','Basa kuat','Asam kuat','Asam lemah','Basa lemah','Basa lemah','Asam kuat','Asam kuat','Basa lemah','Basa lemah','Asam lemah','Basa lemah']}
+
+        df=pd.DataFrame(data)
+
+        df
+
         original_list = ['HCl','NaOH','Pb(OH)2','HNO3','HClO3','Cu(OH)2','LiOH','H2C2O4','RbOH','Ba(OH)2','H3PO4','CH3COOH','KOH','H2SO4','H2O2','NaHCO3','HBO3','HBr','HClO4','Fe(OH)2','NH4OH','H2CO3','Zn(OH)2']
         
         result = st.selectbox('Nama Larutan yang akan dipilih', original_list)
@@ -263,18 +284,7 @@ if test == "Home":
 
             else:
                 st.error('Nilai yang anda masukkan salah, inputkan dalam range 1-14')
-                
-    with tab3: 
-        st.header("Jenis Larutan")
-        import pandas as pd
-        st.write('Beberapa contoh larutan serta jenisnya')
-        data={'Nama larutan':['HCl','NaOH','Pb(OH)2','HNO3','HClO3','Cu(OH)2','LiOH','H2C2O4','RbOH','Ba(OH)2','H3PO4','CH3COOH','KOH','H2SO4','H2O2','NaHCO3','HBO3','HBr','HClO4','Fe(OH)2','NH4OH','H2CO3','Zn(OH)2'],
-              'Jenis larutan':['Asam kuat','Basa kuat','Basa lemah','Asam kuat','Asam kuat','Basa lemah','Basa kuat','Asam lemah','Basa kuat','Basa kuat','Asam lemah','Asam lemah','Basa kuat','Asam kuat','Asam lemah','Basa lemah','Basa lemah','Asam kuat','Asam kuat','Basa lemah','Basa lemah','Asam lemah','Basa lemah']}
-
-        df=pd.DataFrame(data)
-
-        df
-
+               
 if test == "About pH🧪":
     st.title(':green[Yuk Mengenal Apa Itu pH]')
     
