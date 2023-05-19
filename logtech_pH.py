@@ -4,7 +4,9 @@ import pandas as pd
 from PIL import Image
 import numpy as np
 import time    
-
+import json
+import requests
+from streamlit_lottie import st_lottie
 import streamlit as st
 #pH-Analysis.py
 st.set_page_config(
@@ -22,10 +24,7 @@ test = st.sidebar.selectbox("Navigation", ['Home', "About pH🧪", "About Us", "
        
 with st.sidebar.container():
     st.sidebar.markdown("Logtech - pH Analysis App")
-    
-    import json
-    import requests
-    from streamlit_lottie import st_lottie
+
     def load_lottieurl(url: str):
         r = requests.get(url)
         if r.status_code != 200:
